@@ -7,6 +7,9 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {FileUploadModule} from 'primeng/fileupload';
 import {HttpClientModule} from '@angular/common/http';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import {HttpClientModule} from '@angular/common/http';
     InputTextModule,
     ButtonModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    MessageModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
