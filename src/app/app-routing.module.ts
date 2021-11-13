@@ -4,8 +4,8 @@ import { BuscarobrasComponent } from './pages/buscarobras/buscarobras.component'
 import { PrincipalComponent } from './pages/principal/principal.component';
 
 const routes: Routes = [
-  {path: "principal", component: PrincipalComponent},
-  {path: "buscar-obras", component: BuscarobrasComponent}
+  {path: 'principal', component: PrincipalComponent},
+  {path: 'buscar-obras', component: BuscarobrasComponent}
 ];
 
 @NgModule({
