@@ -9,7 +9,16 @@
         background-color: cyan;
     }
 
-    #botonr{
+
+    #h1{
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
+
+<!--
+ #botonr{
         background-color: rgb(48, 75, 167);
         color: white;
         font-size: 20px;
@@ -21,19 +30,14 @@
         margin-left: 15px;
         border-radius: 10px;
     }
-
-    #h1{
-        font-size: 25px;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    }
-</style>
+-->
 
 <body>
     <div class="boton-item">
         <table id="tablabr">
             <tr>
                 <td>
-                    <button class="botonr" id="botonr" (click)="abrir()">Regresar</button>
+                    <button pButton type="button" class="p-button-raised p-button-rounded" id="botonr" (click)="abrir()">Regresar</button>
                 </td>
             </tr>
         </table>
