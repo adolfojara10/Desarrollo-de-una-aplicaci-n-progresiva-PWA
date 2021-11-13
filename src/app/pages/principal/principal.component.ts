@@ -14,7 +14,10 @@ export class PrincipalComponent implements OnInit {
   }
 
   abrir(){
-    console.log("se abrio");
     this.router.navigate(['buscar-obras']);
+  }
+
+  abrirCar(){
+    this.router.navigate(['cargar-obras']);
   }
 }

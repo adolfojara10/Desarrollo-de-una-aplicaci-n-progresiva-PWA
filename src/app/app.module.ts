@@ -15,13 +15,15 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
 import { BuscarobrasComponent } from './pages/buscarobras/buscarobras.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
+import { CargarobrasComponent } from './pages/cargarobras/cargarobras.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     BuscarobrasComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    CargarobrasComponent
   ],
   imports: [
     BrowserModule,
