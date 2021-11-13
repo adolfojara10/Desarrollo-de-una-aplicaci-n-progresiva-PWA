@@ -19,22 +19,19 @@
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
 </style>
+
+
 <body>
-    <table id="tablabr">
-        <tr>
-            <td>
-                <button>Regresar</button>
-            </td>
-        </tr>
-    </table>
+    
     <table border="1">
         <tr>
             <td>
                 <label id="label" for="cargar">Carga las obras de arte aquí</label>
+                
             </td>
             <td>
                 <pre>
-                    <button>Cargar</button>
+                    <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
                 </pre>
             </td>
         </tr>
@@ -44,7 +41,18 @@
                 <label id="label" for="cargar">Ingrese descripción de la obra</label>                                
             </td>
             <td>
-                <input type="text" id="desc" name="desc">
+                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+
+            </td>
+        </tr>
+    </table>
+
+    <br/>
+
+    <table id="tablabr">
+        <tr>
+            <td>
+                <button pButton type="button" class="p-button-raised p-button-rounded" id="botonr" (click)="abrir()">Regresar</button>
             </td>
         </tr>
     </table>
