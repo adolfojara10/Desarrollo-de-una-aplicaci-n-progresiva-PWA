@@ -1,5 +1,44 @@
-<!DOCTYPE html>
+<style>
+    #tablabr{
+        background-color: cornflowerblue;
+        color: cornflowerblue;
+        width: 1850px;
+        height: 75px;
+    }
+    #body{
+        background-color: cyan;
+    }
+
+    #botonr{
+        background-color: rgb(48, 75, 167);
+        color: white;
+        font-size: 20px;
+        width: auto;
+        height: 55px;
+        border-top: lawngreen;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        margin-left: 15px;
+        border-radius: 10px;
+    }
+
+    #h1{
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+
 <body>
-    <p>buscarobras works!</p>
-    <h1>q ondaaaa</h1>
+    <div class="boton-item">
+        <table id="tablabr">
+            <tr>
+                <td>
+                    <button class="botonr" id="botonr" (click)="abrir()">Regresar</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br/>
+
+    <h1>Aqui van las obras de arte</h1>
 </body>
