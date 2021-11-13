@@ -13,11 +13,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
+import { BuscarobrasComponent } from './pages/buscarobras/buscarobras.component';
+import { PrincipalComponent } from './pages/principal/principal.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BuscarobrasComponent,
+    PrincipalComponent
   ],
   imports: [
     BrowserModule,
