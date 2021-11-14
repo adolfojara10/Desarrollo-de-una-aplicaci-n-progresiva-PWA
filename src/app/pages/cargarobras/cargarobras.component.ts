@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { Obra } from 'src/app/domain/obras';
+import { ObrasService } from 'src/app/service/obras.service';
 
 @Component({
   selector: 'app-cargarobras',
@@ -8,13 +10,30 @@ import { Router } from '@angular/router';
 })
 export class CargarobrasComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  obra: Obra = new Obra();
+
+
+
+  constructor(private router: Router, private obraService: ObrasService) { }
 
   ngOnInit(): void {
   }
 
   abrir(){
     this.router.navigate(['principal']);
+  }
+
+  guardar(){
+    console.log(this.obra);
+
+    this.obraService.save(this.obra);
+    
+    let params: NavigationExtras = {
+      queryParams: {
+        obra : this.obra
+      }
+    }
+
   }
 
 }
