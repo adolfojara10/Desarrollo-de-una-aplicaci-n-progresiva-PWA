@@ -1,0 +1,75 @@
+<style>
+    #fondo{
+        width: 2400px;
+        height: 400px;
+        background-image: url(https://ubunlog.com/wp-content/uploads/2014/03/wallpapers-oficiales-ubuntu-14.04-01.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .flex-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #fondo h1{
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 60px;
+    }    
+
+    #body{
+        background-color: rgb(43, 111, 156);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    
+
+    #table-cont{
+        background-color: rgb(36, 124, 131);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-bottom: crimson;
+        height: 100px;
+    }
+</style>
+
+
+ 
+<body id="body">
+    <div class="flex-center">
+        <div id="fondo" class="flex-center">
+            <table align="center">
+                <tr> 
+                    <td>
+                        <h1>Galeria de obras de Arte</h1>
+                    </td>
+                </tr>
+            </table>        
+        </div>    
+    </div>
+    <div class="flex-center">
+        <table id="table-cont" align="centro">
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <pre> <button pButton type="button" class="p-button-raised p-button-rounded" id="botones" (click)="abrir()">Desea buscar obra de arte</button></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table align="center">
+                        <td>
+                            <pre>  <button pButton type="button" class="p-button-raised p-button-rounded" id="botones" (click)="abrirCar()">Desea cargar obra de arte</button> </pre>
+                        </td>
+                    </table>
+                </td>
+            </tr>
+        </table>    
+    </div>
+    
+</body>

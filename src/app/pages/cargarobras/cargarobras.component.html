@@ -1,0 +1,139 @@
+<style>
+    #tablabr{
+        background-color: cornflowerblue;
+        color: cornflowerblue;
+        width: 1845px;
+        height: 75px;
+        
+    }
+
+    #nn{
+        background-color: cyan;
+        background-size: 100%;
+    }
+    
+    #label{
+        font-size: 15px;
+        color: black;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 20px;
+    }
+    
+    #labelT{
+        font-size: 35px;
+        color: black;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        padding: 20px;
+    }
+    
+    #h1{
+        font-size: 25px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+</style>
+    <head>
+        <title>Cargar Obras de Arte</title>
+    </head>
+<body id="nn">
+    <table id="tablabr">
+        <tr>
+            <td>
+                <button pButton type="button" class="p-button-raised p-button-rounded" id="botonr" (click)="abrir()">Regresar</button>
+            </td>
+        </tr>
+    </table>
+
+    <table border="0">
+        <tr>
+            <th colspan="2">
+               <!-- Da le estilo a esto de aqui y al resto ya sabes--> 
+                <label id="labelT" for="inf">
+                    Las obras de arte aquí
+                </label> 
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <pre>
+                    
+                </pre>
+            </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>
+                <label id="label" for="inf">
+                    Titulo
+                </label> 
+            </td>
+            <td>
+                <span class="p-float-label">
+                    <input id="float-input-titulo" type="text" pInputText> 
+                    <label for="float-input">Titulo</label>
+                </span>
+        <br/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label id="label" for="inf">
+                    Autor
+                </label> 
+            </td>
+            <td>
+                <span class="p-float-label">
+                    <input id="float-input-autor" type="text" pInputText> 
+                    <label for="float-input">Autor</label>
+                </span>
+            </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>
+                <label id="label" for="inf">
+                    Fecha de Creacion
+                </label> 
+            </td>
+            <td>
+                <span class="p-float-label">
+                    <input id="float-input-fecha" type="text" pInputText> 
+                    <label for="float-input">Fecha dd/mm/aaaa</label>
+                </span>
+            </td>
+        </tr>
+        <br/>
+        <tr>
+               
+            <td>
+                <label id="label" for="cargar">Ingrese descripción de la obra</label>                                
+            </td>
+            <td>
+            
+                <span class="p-float-label">
+                    <textarea id="float-input-descripcion" rows="5" cols="30" pInputTextarea></textarea>
+                    <label for="float-input">Descripcion</label>
+                </span>
+            <!--
+                <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+                -->
+            </td>
+        </tr>
+        <br/>
+        <tr>
+            <td>
+                <label id="label" for="inf">
+                    Imagen
+                </label> 
+            </td>
+            <td>
+                <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
+            </td>
+        </tr>
+        <br/>
+        <tr>
+            <td colspan="2" align="center">
+                <button pButton type="button" class="p-button-raised p-button-rounded" (click)="guardar()">Guardar</button>
+            </td>
+        </tr>
+    </table> 
+</body>
