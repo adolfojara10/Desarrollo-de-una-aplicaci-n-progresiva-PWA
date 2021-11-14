@@ -11,6 +11,7 @@ import { ObrasService } from 'src/app/service/obras.service';
 export class CargarobrasComponent implements OnInit {
 
   obra: Obra = new Obra();
+  imagenes: any[] =[];
 
 
 
@@ -35,5 +36,21 @@ export class CargarobrasComponent implements OnInit {
     }
 
   }
+
+  cargarImagen(event:any){
+
+    let archivos = event.target.files;
+    let reader = new FileReader;
+    let nombre = "Practica";
+
+    reader.readAsDataURL(archivos[0]);
+    reader.onloadend = () => {
+      console.log(reader.result);
+      this.imagenes.push(reader.result);
+      //this.storageService.subirImagen(nombre + " " + Date.now(), reader.result);
+    }
+  }
+
+
 
 }
