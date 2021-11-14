@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,9 @@ import { NavigationExtras, Router } from '@angular/router';
 export class AppComponent {
   title = 'Practica-Galeria';  
 
-  constructor(private router:Router) { }
+  constructor(private primengConfig: PrimeNGConfig) { }
 
-  abrir(){
-    console.log("se abrio");
-    this.router.navigate(['buscar-obras']);
-    
+  ngOnInit() {
+    this.primengConfig.ripple = true;
   }
 }

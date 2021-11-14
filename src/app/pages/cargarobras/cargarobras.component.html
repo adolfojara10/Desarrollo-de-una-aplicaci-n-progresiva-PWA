@@ -52,7 +52,7 @@
         <tr>
             <td colspan="2">
                 <pre>
-                    <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
+                    
                 </pre>
             </td>
         </tr>
@@ -64,7 +64,11 @@
                 </label> 
             </td>
             <td>
-                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText> 
+                    <label for="float-input">Titulo</label>
+                </span>
+        <br/>
             </td>
         </tr>
         <tr>
@@ -74,9 +78,13 @@
                 </label> 
             </td>
             <td>
-                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText> 
+                    <label for="float-input">Autor</label>
+                </span>
             </td>
         </tr>
+        <br/>
         <tr>
             <td>
                 <label id="label" for="inf">
@@ -84,19 +92,30 @@
                 </label> 
             </td>
             <td>
-                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+                <span class="p-float-label">
+                    <input id="float-input" type="text" pInputText> 
+                    <label for="float-input">Fecha dd/mm/aaaa</label>
+                </span>
             </td>
         </tr>
+        <br/>
         <tr>
-            <!-- aqui tambien, despues borra los comentarios --> 
+               
             <td>
                 <label id="label" for="cargar">Ingrese descripción de la obra</label>                                
             </td>
             <td>
-                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
-
+            
+                <span class="p-float-label">
+                    <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+                    <label for="float-input">Descripcion</label>
+                </span>
+<!--
+                <textarea rows="5" cols="30" pInputTextarea autoResize="autoResize"></textarea>
+                -->
             </td>
         </tr>
+        <br/>
         <tr>
             <td>
                 <label id="label" for="inf">
@@ -104,12 +123,13 @@
                 </label> 
             </td>
             <td>
-                <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+                <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
             </td>
         </tr>
+        <br/>
         <tr>
             <td colspan="2" align="center">
-                <button>Guardar</button>
+                <button pButton type="button" class="p-button-raised p-button-rounded">Guardar</button>
             </td>
         </tr>
     </table>
