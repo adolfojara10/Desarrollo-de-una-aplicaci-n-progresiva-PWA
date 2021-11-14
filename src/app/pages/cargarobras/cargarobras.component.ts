@@ -14,7 +14,6 @@ export class CargarobrasComponent implements OnInit {
   imagenes: any[] =[];
 
 
-
   constructor(private router: Router, private obraService: ObrasService) { }
 
   ngOnInit(): void {
@@ -45,7 +44,7 @@ export class CargarobrasComponent implements OnInit {
 
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
-      console.log(reader.result);
+      console.log("Img ==> ", reader.result);
       this.imagenes.push(reader.result);
       //this.storageService.subirImagen(nombre + " " + Date.now(), reader.result);
     }
