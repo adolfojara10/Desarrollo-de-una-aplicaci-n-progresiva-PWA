@@ -26,6 +26,34 @@
         padding: 20px;
     }
     
+    .custom-input-file {
+  background-color: #1d3f9e;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 auto 0;
+  min-height: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 400px;
+}
+
+.custom-input-file .input-file {
+ border: 10000px solid transparent;
+ cursor: pointer;
+ font-size: 10000px;
+ margin: 0;
+ opacity: 0;
+ outline: 0 none;
+ padding: 0;
+ position: absolute;
+ right: -1000px;
+ top: -1000px;
+}
+    
     #h1{
         font-size: 25px;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -52,13 +80,6 @@
                 </label> 
             </th>
         </tr>
-        <tr>
-            <td colspan="2">
-                <pre>
-                    
-                </pre>
-            </td>
-        </tr>
         <br/>
         <tr>
             <td>
@@ -71,7 +92,10 @@
                     <input id="float-input-titulo" type="text" pInputText> 
                     <label for="float-input">Titulo</label>
                 </span>
-        <br/>
+                <br/>
+            </td>
+            <td rowspan="8" align="center">
+                <img src="{{imagenes[0]}}"> 
             </td>
         </tr>
         <tr>
@@ -126,19 +150,15 @@
                 </label> 
             </td>
             <td>
-                <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
+                <!--
+                    <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload>
+                -->
+                <input class="custom-input-file" type="file" accept=".png, .jpg, .jpeg" multiple (change)= "cargarImagen($event)">        
             </td>
         </tr>
-        <br/>
-
-        
-        <input type="file" accept=".png, .jpg, .jpeg" multiple (change)= "cargarImagen($event)">
-
-        <img src="{{imagenes[0]}}" alt="imagen Subida"> 
-
-
         <tr>
             <td colspan="2" align="center">
+                <br/>
                 <button pButton type="button" class="p-button-raised p-button-rounded" (click)="guardar()">Guardar</button>
             </td>
         </tr>
