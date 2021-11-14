@@ -41,7 +41,7 @@ export class CargarobrasComponent implements OnInit {
 
     let archivos = event.target.files;
     let reader = new FileReader;
-    let nombre = "Romel";
+    let nombre = "Practica";
 
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
