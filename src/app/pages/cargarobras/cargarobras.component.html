@@ -130,6 +130,13 @@
             </td>
         </tr>
         <br/>
+
+        
+        <input type="file" accept=".png, .jpg, .jpeg" multiple (change)= "cargarImagen($event)">
+
+        <img src="{{imagenes[0]}}" alt="imagen Subida"> 
+
+
         <tr>
             <td colspan="2" align="center">
                 <button pButton type="button" class="p-button-raised p-button-rounded" (click)="guardar()">Guardar</button>
