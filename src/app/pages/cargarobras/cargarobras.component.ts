@@ -13,11 +13,14 @@ export class CargarobrasComponent implements OnInit {
 
   obra: Obra = new Obra();
   imagenes: any[] =[];
+  obras: any;
+  listaObras:any;
 
 
-  constructor(private router: Router, private obraService: ObrasService, private stororageService: StorageService) { }
+  constructor(private router: Router, private obraService: ObrasService, private storageService: StorageService) { }
 
   ngOnInit(): void {
+
   }
 
   abrir(){
@@ -36,7 +39,7 @@ export class CargarobrasComponent implements OnInit {
     }
 
   }
-
+ 
   cargarImagen(event:any){
 
     let archivos = event.target.files;
@@ -47,10 +50,8 @@ export class CargarobrasComponent implements OnInit {
     reader.onloadend = () => {
       console.log("Img ==> ", reader.result);
       this.imagenes.push(reader.result);
-      this.stororageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
+      this.storageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
     }
   }
-
-
 
 }

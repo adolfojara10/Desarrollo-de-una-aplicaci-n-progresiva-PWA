@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
 import "firebase/compat/storage"
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 firebase.initializeApp(environment.firebaseConfig)
@@ -12,7 +14,7 @@ export class StorageService {
 
   
 
-  constructor() { }
+  constructor(private afs: AngularFirestore) { }
 
   async subirImagen(nombre:string, imgBase64:any){
     const storareRef = firebase.storage().ref();
@@ -26,4 +28,11 @@ export class StorageService {
      return null;
     }
   }
+
+  getObras(): Observable<any[]>{
+    const refObras = this.afs.collection("obras");
+
+    return refObras.valueChanges();
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {OrderListModule} from 'primeng/orderlist';
+import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
   selector: 'app-buscarobras',
@@ -9,9 +10,19 @@ import {OrderListModule} from 'primeng/orderlist';
 })
 export class BuscarobrasComponent implements OnInit {
 
-  constructor(private router: Router, private orderLM: OrderListModule) { }
+  obras: any;
+  listaObras:any;
+
+  constructor(private router: Router, private orderLM: OrderListModule, private stororageService: StorageService) { }
 
   ngOnInit(): void {
+    this.obras = this.stororageService.getObras();
+    console.log(this.obras);
+
+    this.obras.subscribe((data: any) => {
+      console.log("datos:", data);
+      this.listaObras = data;
+    })
   }
 
   abrir(){
