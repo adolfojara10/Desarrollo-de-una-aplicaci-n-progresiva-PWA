@@ -89,7 +89,7 @@
             </td>
             <td>
                 <span class="p-float-label">
-                    <input id="float-input-titulo" type="text" pInputText> 
+                    <input id="float-input-titulo" type="text" pInputText [(ngModel)]="obra.titulo"> 
                     <label for="float-input">Titulo</label>
                 </span>
                 <br/>
@@ -106,7 +106,7 @@
             </td>
             <td>
                 <span class="p-float-label">
-                    <input id="float-input-autor" type="text" pInputText> 
+                    <input id="float-input-autor" type="text" pInputText [(ngModel)]="obra.autor"> 
                     <label for="float-input">Autor</label>
                 </span>
             </td>
@@ -120,7 +120,7 @@
             </td>
             <td>
                 <span class="p-float-label">
-                    <input id="float-input-fecha" type="text" pInputText> 
+                    <input id="float-input-fecha" type="text" pInputText [(ngModel)]="obra.fecha"> 
                     <label for="float-input">Fecha dd/mm/aaaa</label>
                 </span>
             </td>
@@ -134,7 +134,7 @@
             <td>
             
                 <span class="p-float-label">
-                    <textarea id="float-input-descripcion" rows="5" cols="30" pInputTextarea></textarea>
+                    <textarea id="float-input-descripcion" rows="5" cols="30" pInputTextarea [(ngModel)]="obra.descripcion"></textarea>
                     <label for="float-input">Descripcion</label>
                 </span>
             <!--

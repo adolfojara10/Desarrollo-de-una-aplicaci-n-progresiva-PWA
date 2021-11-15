@@ -21,6 +21,10 @@ export class CargarobrasComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log(this.ngOnInit);
+
+    this.obras = this.storageService.getObras();
+    console.log(this.obras);
   }
 
   abrir(){
@@ -38,6 +42,8 @@ export class CargarobrasComponent implements OnInit {
       }
     }
 
+    this.obra = new Obra();
+
   }
  
   cargarImagen(event:any){
@@ -51,6 +57,7 @@ export class CargarobrasComponent implements OnInit {
       console.log("Img ==> ", reader.result);
       this.imagenes.push(reader.result);
       this.storageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
+      
     }
   }
 

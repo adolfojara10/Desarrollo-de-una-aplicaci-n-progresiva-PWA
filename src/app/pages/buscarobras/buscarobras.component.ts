@@ -16,6 +16,7 @@ export class BuscarobrasComponent implements OnInit {
   constructor(private router: Router, private orderLM: OrderListModule, private stororageService: StorageService) { }
 
   ngOnInit(): void {
+
     this.obras = this.stororageService.getObras();
     console.log(this.obras);
 
@@ -23,6 +24,7 @@ export class BuscarobrasComponent implements OnInit {
       console.log("datos:", data);
       this.listaObras = data;
     })
+  
   }
 
   abrir(){

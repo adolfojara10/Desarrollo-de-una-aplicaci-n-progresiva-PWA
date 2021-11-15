@@ -17,6 +17,7 @@ import { BuscarobrasComponent } from './pages/buscarobras/buscarobras.component'
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { CargarobrasComponent } from './pages/cargarobras/cargarobras.component';
 import {OrderListModule} from 'primeng/orderlist';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {OrderListModule} from 'primeng/orderlist';
     MessageModule,
     MessagesModule,
     OrderListModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
