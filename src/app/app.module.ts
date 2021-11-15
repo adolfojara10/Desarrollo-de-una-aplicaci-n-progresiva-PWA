@@ -18,6 +18,7 @@ import { PrincipalComponent } from './pages/principal/principal.component';
 import { CargarobrasComponent } from './pages/cargarobras/cargarobras.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
