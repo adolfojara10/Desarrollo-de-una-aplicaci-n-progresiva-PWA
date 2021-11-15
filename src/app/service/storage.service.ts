@@ -18,7 +18,7 @@ export class StorageService {
     const storareRef = firebase.storage().ref();
     try{
       //let storageRef = firebase.storage().ref();
-      let respuesta= await storareRef.child("users/"+nombre).putString(imgBase64,'data_url');
+      let respuesta= await storareRef.child("galeria/"+nombre).putString(imgBase64,'data_url');
       console.log(respuesta);
       return await respuesta.ref.getDownloadURL();
     }catch(err){
