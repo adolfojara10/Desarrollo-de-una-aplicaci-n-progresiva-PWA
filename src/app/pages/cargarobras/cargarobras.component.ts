@@ -47,7 +47,7 @@ export class CargarobrasComponent implements OnInit {
     reader.onloadend = () => {
       console.log("Img ==> ", reader.result);
       this.imagenes.push(reader.result);
-      //this.stororageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
+      this.stororageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
     }
   }
 
