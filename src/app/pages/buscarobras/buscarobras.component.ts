@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {OrderListModule} from 'primeng/orderlist';
 
 @Component({
   selector: 'app-buscarobras',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class BuscarobrasComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private orderLM: OrderListModule) { }
 
   ngOnInit(): void {
   }
