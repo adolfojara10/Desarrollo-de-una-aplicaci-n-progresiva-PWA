@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Obra } from 'src/app/domain/obras';
 import { ObrasService } from 'src/app/service/obras.service';
+import { StorageService } from 'src/app/service/storage.service';
 
 @Component({
   selector: 'app-cargarobras',
@@ -14,7 +15,7 @@ export class CargarobrasComponent implements OnInit {
   imagenes: any[] =[];
 
 
-  constructor(private router: Router, private obraService: ObrasService) { }
+  constructor(private router: Router, private obraService: ObrasService, private stororageService: StorageService) { }
 
   ngOnInit(): void {
   }
@@ -46,7 +47,7 @@ export class CargarobrasComponent implements OnInit {
     reader.onloadend = () => {
       console.log("Img ==> ", reader.result);
       this.imagenes.push(reader.result);
-      //this.storageService.subirImagen(nombre + " " + Date.now(), reader.result);
+      //this.stororageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
     }
   }
 
