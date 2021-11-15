@@ -54,6 +54,9 @@
 </style>
 
 <body>
+    <div>
+
+    </div>
     <div class="boton-item">
         <table id="tablabr">
             <tr>
@@ -91,9 +94,41 @@
         filterPlaceholder="Titulo de la obra">
         <ng-template let-obra pTemplate="item">
             <div>
-                <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{obra.titulo}}</div>
-                <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{obra.titulo}} - {{obra.autor}}-{{obra.descripcion}}-{{obra.fecha}}</div>
-                <img src="{{obra.urlImagen}}" style="display:inline-block;margin:2px 0 2px 2px" width="48">
+                <!--<div style="font-size:14px;float:right;margin:15px 5px 0 0">{{obra.titulo}}</div>
+                    <div style="font-size:14px;float:right;margin: 30px 5px 0 0; width: 150;">{{obra.titulo}} ------- {{obra.autor}}-------{{obra.descripcion}}-------{{obra.fecha}}</div>
+                -->
+                <img src="{{obra.urlImagen}}" style="display:inline-block;margin:2px 0 2px 2px" width="200">
+                <table>
+                    <tr>
+                        <th>
+                            Título
+                        </th>
+                        <th>
+                            Autor
+                        </th>    
+                        <th>
+                            Fecha
+                        </th>          
+                        <th>
+                            Descripción
+                        </th>          
+                    </tr>
+                    <tr>
+                        <td>
+                            {{obra.titulo}}
+                        </td>
+                        <td>
+                            {{obra.autor}}
+                        </td>
+                        <td>
+                            {{obra.fecha}}
+                        </td>
+                        <td>
+                            {{obra.descripcion}}
+                        </td>
+                    </tr>
+                </table>
+                
             </div>
 
         </ng-template>
@@ -102,102 +137,104 @@
     </div>
 
     <br/>
-    <!--
-    <div>
-        <table align="center" border="0" width="720" id="estilo">
-            <tr>
-                <th colspan="6">
-                    <h1>Informacion</h1>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <h3>#</h3>
-                </th>
-                <th>
-                    <h3>Título</h3>
-                </th>
-                <th>
-                    <h3>Autor</h3>
-                </th>
-                <th>
-                    <h3>Año de Creación</h3>
-                </th>
-                <th>
-                    <h3>Descripción</h3>
-                </th>
-                <th>
-                    <h3>Imágen</h3>
-                </th>                
-            </tr>
-            <tr>
-                <td>
-                d       
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-            </tr>
-            <tr>
-                <td>
-                d       
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-            </tr>
-            <tr>
-                <td>
-                d       
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-                <td>
-d
-                </td>
-            </tr>
-            
-        </table>
-        <br/>
-    </div>
-
--->
-
-<div>
-</div>
-    
 </body>
+
+
+
+
+
+
+<!--
+<div>
+    <table align="center" border="0" width="720" id="estilo">
+        <tr>
+            <th colspan="6">
+                <h1>Informacion</h1>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <h3>#</h3>
+            </th>
+            <th>
+                <h3>Título</h3>
+            </th>
+            <th>
+                <h3>Autor</h3>
+            </th>
+            <th>
+                <h3>Año de Creación</h3>
+            </th>
+            <th>
+                <h3>Descripción</h3>
+            </th>
+            <th>
+                <h3>Imágen</h3>
+            </th>                
+        </tr>
+        <tr>
+            <td>
+            d       
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+        </tr>
+        <tr>
+            <td>
+            d       
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+        </tr>
+        <tr>
+            <td>
+            d       
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+            <td>
+d
+            </td>
+        </tr>
+        
+    </table>
+    <br/>
+</div>
+
+--> 
