@@ -12,7 +12,7 @@ import { StorageService } from 'src/app/service/storage.service';
 export class CargarobrasComponent implements OnInit {
 
   obra: Obra = new Obra();
-  imagenes: any[] =[];
+  imagenes: any;
   obras: any;
   listaObras:any;
 
@@ -32,31 +32,34 @@ export class CargarobrasComponent implements OnInit {
   }
 
   guardar(){
-    console.log(this.obra);
-
-    this.obraService.save(this.obra);
+    console.log("funciaonaaa ",this.obra);
+    this.storageService.subirImagen(this.obra.titulo,this.imagenes).then(URLimagen => {
+      this.obra.urlImagen = URLimagen;
+      this.obraService.save(this.obra);
+      this.obra = new Obra();
+    });
+    
+    //this.obraService.save(this.obra);
     
     let params: NavigationExtras = {
       queryParams: {
         obra : this.obra
       }
     }
-
-    this.obra = new Obra();
-
+    
   }
  
   cargarImagen(event:any){
 
     let archivos = event.target.files;
     let reader = new FileReader;
-    let nombre = "PracticaWeb";
+
 
     reader.readAsDataURL(archivos[0]);
     reader.onloadend = () => {
       console.log("Img ==> ", reader.result);
-      this.imagenes.push(reader.result);
-      this.storageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
+      this.imagenes = reader.result;
+      //this.storageService.subirImagen(nombre + " " + Date.now(), reader.result).then(urlImagen =>{console.log(urlImagen)});
       
     }
   }

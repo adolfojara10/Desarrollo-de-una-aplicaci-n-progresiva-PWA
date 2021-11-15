@@ -4,10 +4,10 @@
         width: 100%;
         height: 75px;
     }
-    #nn{
+    
+    body{
         background-color: rgb(6, 49, 63);
-        background-size: 100%;
-        color: rgb(224, 224, 224);
+        
     }
 
 
@@ -23,8 +23,6 @@
         margin-left: 15px;
         display: inline-flexbox;
     }
-
-
 
     #estilo{
         border-radius: 15px;
@@ -48,9 +46,14 @@
         transition: ease-in;
     }
 
+    
+    #divTable{
+        margin-right: 75px;
+    }
+
 </style>
 
-<body id="nn">
+<body>
     <div class="boton-item">
         <table id="tablabr">
             <tr>
@@ -83,20 +86,23 @@
     </div>
 -->
 
-    <div name="OrderList">
+    <div name="OrderList" id="divTable">
         <p-orderList [value]="listaObras" header="Obras" filterBy="titulo" 
         filterPlaceholder="Titulo de la obra">
         <ng-template let-obra pTemplate="item">
             <div>
-               <!-- <img src="{{obra.urlImagen}}" style="display:inline-block;margin:2px 0 2px 2px" width="48">-->
                 <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{obra.titulo}}</div>
+                <div style="font-size:14px;float:right;margin:15px 5px 0 0">{{obra.titulo}} - {{obra.autor}}-{{obra.descripcion}}-{{obra.fecha}}</div>
+                <img src="{{obra.urlImagen}}" style="display:inline-block;margin:2px 0 2px 2px" width="48">
             </div>
+
         </ng-template>
         </p-orderList>
 
     </div>
 
     <br/>
+    <!--
     <div>
         <table align="center" border="0" width="720" id="estilo">
             <tr>
@@ -189,7 +195,9 @@ d
         <br/>
     </div>
 
+-->
 
-
+<div>
+</div>
     
 </body>

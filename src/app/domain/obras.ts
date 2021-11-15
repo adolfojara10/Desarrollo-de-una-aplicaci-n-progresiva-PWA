@@ -5,6 +5,6 @@ export class Obra {
     autor: string ='';
     fecha: string ='';
     descripcion: string ='';
-    urlImagen: string ='';
+    urlImagen: any;
 
 }
