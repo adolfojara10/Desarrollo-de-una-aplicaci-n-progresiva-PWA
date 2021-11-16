@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/practicaGaleria",
+    "public": "dist/Practica-Galeria",
     "ignore": [
       "firebase.json",
       "**/.*",
