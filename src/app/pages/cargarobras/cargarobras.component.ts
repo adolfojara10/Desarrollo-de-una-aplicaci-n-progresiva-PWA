@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { Obra } from 'src/app/domain/obras';
 import { ObrasService } from 'src/app/service/obras.service';
 import { StorageService } from 'src/app/service/storage.service';
@@ -17,7 +17,16 @@ export class CargarobrasComponent implements OnInit {
   listaObras:any;
 
 
-  constructor(private router: Router, private obraService: ObrasService, private storageService: StorageService) { }
+  constructor(private router: Router, private obraService: ObrasService, private storageService: StorageService, private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      console.log(params);
+
+      if(this.router.getCurrentNavigation()?.extras.queryParams){
+        let obra = this.router.getCurrentNavigation()?.extras.queryParams?.obra;
+        this.obra = obra;
+      }
+    })
+   }
 
   ngOnInit(): void {
 
@@ -31,13 +40,17 @@ export class CargarobrasComponent implements OnInit {
     this.router.navigate(['principal']);
   }
 
-  guardar(){
+  guardar(){ 
     console.log("funciaonaaa ",this.obra);
-    this.storageService.subirImagen(this.obra.titulo,this.imagenes).then(URLimagen => {
-      this.obra.urlImagen = URLimagen;
+    if(this.obra.id == null){
+      this.storageService.subirImagen(this.obra.titulo,this.imagenes).then(URLimagen => {
+        this.obra.urlImagen = URLimagen;
+        this.obraService.save(this.obra);
+        this.obra = new Obra();
+      });
+    }else{
       this.obraService.save(this.obra);
-      this.obra = new Obra();
-    });
+    }
     
     //this.obraService.save(this.obra);
     

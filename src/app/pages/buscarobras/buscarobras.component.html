@@ -51,6 +51,11 @@
         margin-right: 75px;
     }
 
+    #editar{
+        background:transparent;
+        color: white;
+        font-size: 15px;
+    }
 </style>
 
 <body>
@@ -67,30 +72,10 @@
         </table>
     </div>
     <br/>
-    <!--
-    <div class="busqueda">
-        <br/>
-        <pre><h1> Aqui van las obras de arte</h1></pre>
-    <span class="p-float-label">
-        <input id="float-input" type="text" pInputText >
-        <label for="float-input">Nombre de la obra</label>
-    </span>
-        <pre>  <button pButton type="button" class="p-button-raised p-button-rounded" id="botonr">Buscar</button></pre>
-        
-    </div>
     
-    <br/>
-    <hr align="center" width="95%"/>
-
-    <div class="obra">
-
-        <img>                       
-        
-    </div>
--->
-
     <div name="OrderList" id="divTable">
         <p-orderList [value]="listaObras" header="Obras" filterBy="titulo" 
+        (onSelectionChange)="onSelectionChange($event)"
         filterPlaceholder="Titulo de la obra">
         <ng-template let-obra pTemplate="item">
             <div>
@@ -128,17 +113,37 @@
                         </td>
                     </tr>
                 </table>
-                
             </div>
-
         </ng-template>
-        </p-orderList>
+    </p-orderList>
+    
+    <button id="editar" (click)="editar()">EDITAR</button>
+</div>
 
-    </div>
-
-    <br/>
+<br/>
 </body>
 
+<!--
+<div class="busqueda">
+    <br/>
+    <pre><h1> Aqui van las obras de arte</h1></pre>
+<span class="p-float-label">
+    <input id="float-input" type="text" pInputText >
+    <label for="float-input">Nombre de la obra</label>
+</span>
+    <pre>  <button pButton type="button" class="p-button-raised p-button-rounded" id="botonr">Buscar</button></pre>
+    
+</div>
+
+<br/>
+<hr align="center" width="95%"/>
+
+<div class="obra">
+
+    <img>                       
+    
+</div>
+-->
 
 
 

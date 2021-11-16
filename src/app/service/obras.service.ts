@@ -19,7 +19,7 @@ export class ObrasService {
       obra.id = this.afs.createId();
     }
 
-    refObras.add(Object.assign({}, obra));
+    refObras.doc(obra.id).set(Object.assign({}, obra));
 
   }
 
